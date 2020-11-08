@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
-import usersReducer from './users/reducer';
+import autoCompleteReducer from './autocomplete/reducer';
 
 
-// combine all reducers and export them as one
 const rootReducer = combineReducers({
-    users: usersReducer 
+    autocomplete: autoCompleteReducer 
 });
 
 export default rootReducer;

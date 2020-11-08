@@ -1,3 +1,4 @@
+import { setAutoComplete } from '../..';
 import ACTIONS from './actionTypes'
 
 
@@ -39,5 +40,18 @@ export const apiAction = ( payload ) => {
         type: ACTIONS.API,
         payload
     };
+
+}
+
+
+// get auto-complete suggestions from API
+export const apiAutoComplete = ( query ) => {
+
+    return apiAction({
+        endpoint: 'sKFzwtd6',
+        // endpoint: 'locations/v1/cities/autocomplete',
+        data: { q: query },
+        onSuccess: setAutoComplete
+    });
 
 }

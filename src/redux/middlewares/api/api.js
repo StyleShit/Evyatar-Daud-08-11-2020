@@ -1,6 +1,9 @@
 import { apiError, apiStart, apiSuccess } from './actions';
 import ACTIONS from './actionTypes';
 
+const baseURL = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const apiMiddleware = ({ dispatch }) => next => action => {
 
     // throw non-api requests
@@ -17,7 +20,7 @@ const apiMiddleware = ({ dispatch }) => next => action => {
     // destruct request options from payload
     let {
 
-        url = '',
+        endpoint = '',
         method = 'GET',
         data = {},
         headers = {},
@@ -26,21 +29,18 @@ const apiMiddleware = ({ dispatch }) => next => action => {
         
     } = action.payload;
 
-    headers['Content-Type'] = 'application/json';
-    let options = { method, mode: 'cors', redirect: 'follow', headers };
 
+    data.apikey = apiKey;
+    headers['Content-Type'] = 'application/json';
+
+    let url = baseURL + endpoint;
+    let options = { method, mode: 'cors', redirect: 'follow', headers };
+    
 
     // if it's GET, add `data` as query string
     if( method === 'GET' )
     {
-        // build query string
-        const queryString = Object.keys( data ).map( key => {
-
-            return key + '=' + data[key];
-
-        }).join( '&' );
-
-        // append the query string to the url
+        const queryString = Object.keys( data ).map( key => ( key + '=' + data[key] )).join( '&' );
         url += '?' + queryString;
     }
 
