@@ -3,9 +3,15 @@
     text-decoration: none;
     color: #FFF;
     padding: .5rem 1rem;
+    transition: .3s all;
 }
 
 .navigation-container a:not( :last-child )
 {
     margin-right: .5rem;
+}
+
+.navigation-container a:hover
+{
+    color: #E0AA1F;
 }

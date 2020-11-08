@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation()
 {
     return (
         <div className="navigation-container">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/" className="nav-link">Favorites</a>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/favorites" className="nav-link">Favorites</Link>
         </div>
     )
 }

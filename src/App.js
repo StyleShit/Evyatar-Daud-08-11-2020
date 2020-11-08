@@ -1,9 +1,10 @@
 import React from 'react';
+import { Switch, Route } from "react-router-dom";
 import withStore from './HOCs/withStore';
+import withRouter from './HOCs/withRouter';
+import { compose } from 'redux';
 import { Header } from './components/Header';
-import { ForecastView } from './components/ForecastView';
-import { Hero } from './components/Hero';
-import { AutoComplete } from './components/AutoComplete';
+import { Favorites, Home } from './pages';
 
 import './css/App.css';
 
@@ -13,11 +14,23 @@ function App()
 	return (
 		<div className="app-container">
 			<Header />
-			<AutoComplete />
-			<Hero />
-			<ForecastView />
+
+			<Switch>
+
+				<Route exact path="/">
+					<Home />
+				</Route>
+
+				<Route exact path="/favorites">
+					<Favorites />
+				</Route>
+
+			</Switch>
 		</div>
 	);
 }
 
-export default withStore( App );
+export default compose(
+	withStore,
+	withRouter
+)( App );
