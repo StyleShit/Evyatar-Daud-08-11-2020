@@ -1,43 +1,49 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Loader } from '../Loader';
+import { getImageURL } from '../../utils';
 import './ForecastView.css';
 
 function ForecastView()
 {
+    const weather = useSelector( state => state.weather );
+    const loading = weather.forecast.length === 0;
+
     return (
         <div className="forecast-container">
 
-            <div className="forecast-day">
-                <span className="day">Sun</span>
-                <img className="weather-icon" alt="weather-icon" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
-                <span className="temperature">38c</span>
-            </div>
-
-            <div className="forecast-day">
-                <span className="day">Mon</span>
-                <img className="weather-icon" alt="weather-icon" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
-                <span className="temperature">38c</span>
-            </div>
-
-            <div className="forecast-day">
-                <span className="day">Tue</span>
-                <img className="weather-icon" alt="weather-icon" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
-                <span className="temperature">38c</span>
-            </div>
-
-            <div className="forecast-day">
-                <span className="day">Wed</span>
-                <img className="weather-icon" alt="weather-icon" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
-                <span className="temperature">38c</span>
-            </div>
-
-            <div className="forecast-day">
-                <span className="day">Thu</span>
-                <img className="weather-icon" alt="weather-icon" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
-                <span className="temperature">38c</span>
-            </div>
+            { loading && <Loader /> }
+            
+            { 
+                weather.forecast.map( ( f, i ) => {
+                    return ForecastDay( f, i );
+                })
+            }
 
         </div>
     )
+}
+
+
+const ForecastDay = ( forecast, i ) => {
+
+    const date = new Date( forecast.Date );
+    const day = date.toString().split( ' ' )[0];
+    const icon = forecast.Day.Icon;
+    const iconAlt = forecast.Day.IconPhrase;
+    const temperatureMin = parseInt( forecast.Temperature.Minimum.Value );
+    const temperatureMax = parseInt( forecast.Temperature.Maximum.Value );
+    
+    return (
+        <div className="forecast-day" key={ i }>
+            <span className="day">{ day }</span>
+            <img className="weather-icon" alt={ iconAlt } src={ getImageURL( icon ) } />
+            <span className="temperature">
+                { temperatureMin }° - { temperatureMax }°
+            </span>
+        </div>
+    );
+
 }
 
 export default ForecastView;

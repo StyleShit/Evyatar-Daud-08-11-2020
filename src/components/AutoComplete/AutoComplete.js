@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAutoComplete, setCurrentWeather } from '../../redux';
-import { apiAutoComplete, apiCurrentWeather } from '../../redux/middlewares/api';
+import { setAutoComplete, setCurrentWeather, setForecast } from '../../redux';
+import { apiAutoComplete, apiCurrentWeather, apiForecast } from '../../redux/middlewares/api';
 import './AutoComplete.css';
 
 
@@ -57,8 +57,13 @@ function AutoComplete()
         setCurrentItem( -1 );
         dispatch( setAutoComplete( [] ) );
         
+        // reset & fetch current weather
         dispatch( setCurrentWeather( [] ) );
         dispatch( apiCurrentWeather( selected ) );
+
+        // reset & fetch forecast
+        dispatch( setForecast( [] ) );
+        dispatch( apiForecast( selected ) );
 
     };
 

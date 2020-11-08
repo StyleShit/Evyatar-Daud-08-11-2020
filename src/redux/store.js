@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore } from 'redux';
-import { apiCurrentWeather, apiMiddleware } from './middlewares/api';
+import { apiCurrentWeather, apiForecast, apiMiddleware } from './middlewares/api';
 import { loggerMiddleware } from './middlewares/logger';
 import rootReducer from './rootReducer';
 
@@ -25,6 +25,7 @@ const defaultLocation = {
 };
 
 store.dispatch( apiCurrentWeather( defaultLocation ) );
+store.dispatch( apiForecast( defaultLocation ) );
 
 
 export default store;

@@ -17,6 +17,12 @@ const reducer = ( state = defaultState, { type, payload } ) => {
                 current: payload.current
             };
 
+        case ACTIONS.SET_FORECAST:
+            return { 
+                ...state, 
+                forecast: payload.forecast
+            };
+
         default:
             return state;
     }

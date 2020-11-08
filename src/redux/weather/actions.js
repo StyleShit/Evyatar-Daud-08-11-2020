@@ -12,3 +12,14 @@ export const setCurrentWeather = ( [ current ], name = '' ) => {
     };
 
 }
+
+export const setForecast = ({ DailyForecasts: forecast }) => {
+
+    forecast = forecast || [];
+    
+    return {
+        type: ACTIONS.SET_FORECAST,
+        payload: { forecast }
+    };
+
+}
