@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore } from 'redux';
-import { apiMiddleware } from './middlewares/api';
+import { apiCurrentWeather, apiMiddleware } from './middlewares/api';
 import { loggerMiddleware } from './middlewares/logger';
 import rootReducer from './rootReducer';
 
@@ -16,5 +16,15 @@ if( process.env.NODE_ENV === 'development' )
 
 // export the Redux store with the root reducer & middlewares
 const store = createStore( rootReducer, applyMiddleware( ...middlewares ) );
+
+
+// fetch default location data on load
+const defaultLocation = { 
+    LocationKey: '215854',
+    LocalizedName: 'Tel Aviv'
+};
+
+store.dispatch( apiCurrentWeather( defaultLocation ) );
+
 
 export default store;

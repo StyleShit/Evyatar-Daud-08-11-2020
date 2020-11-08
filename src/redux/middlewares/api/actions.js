@@ -1,4 +1,4 @@
-import { setAutoComplete } from '../..';
+import { setAutoComplete, setCurrentWeather } from '../..';
 import ACTIONS from './actionTypes'
 
 
@@ -52,6 +52,18 @@ export const apiAutoComplete = ( query ) => {
         // endpoint: 'locations/v1/cities/autocomplete',
         data: { q: query },
         onSuccess: setAutoComplete
+    });
+
+}
+
+
+// get current weather by location key
+export const apiCurrentWeather = ({ Key: locationKey, LocalizedName: name }) => {
+
+    return apiAction({
+        endpoint: `Qgi7q1mW?${ locationKey }`,
+        // endpoint: 'currentconditions/v1/${ locationKey }',
+        onSuccess: ( data ) => setCurrentWeather( data, name )
     });
 
 }
