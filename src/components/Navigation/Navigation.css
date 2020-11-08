@@ -1,0 +1,11 @@
+.navigation-container a
+{
+    text-decoration: none;
+    color: #FFF;
+    padding: .5rem 1rem;
+}
+
+.navigation-container a:not( :last-child )
+{
+    margin-right: .5rem;
+}

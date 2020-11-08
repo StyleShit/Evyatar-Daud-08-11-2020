@@ -1,5 +1,6 @@
 import React from 'react';
 import withStore from './HOCs/withStore';
+import { Header } from './components/Header';
 
 import './css/App.css';
 
@@ -7,7 +8,11 @@ import './css/App.css';
 function App()
 {
 	return (
-		<h1>It Works!</h1>
+		<Header />
+
+		// TODO: autocomplete
+
+		// TODO: forecast-view 
 	);
 }
 
