@@ -1,0 +1,22 @@
+.hero
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFF;
+    text-shadow: 0 0 10px rgba( 0,0,0,.5 );
+}
+
+.hero .hero-title
+{
+    margin: 0;
+    font-size: 3rem;
+}
+
+.hero .hero-subtitle span
+{
+    display: inline-block;
+    padding: .5rem 1rem;
+    font-size: 1.2em;
+}

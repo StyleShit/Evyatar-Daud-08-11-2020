@@ -2,6 +2,7 @@ import React from 'react';
 import withStore from './HOCs/withStore';
 import { Header } from './components/Header';
 import { ForecastView } from './components/ForecastView';
+import { Hero } from './components/Hero';
 
 import './css/App.css';
 
@@ -13,6 +14,7 @@ function App()
 			<Header />
 
 			{/* TODO: autocomplete */}
+			<Hero />
 
 			<ForecastView />
 		</div>
