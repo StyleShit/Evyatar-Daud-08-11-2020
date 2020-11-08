@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getImageURL } from '../../utils';
+import { Loader } from '../Loader';
 import './Hero.css';
 
 function Hero()
@@ -10,7 +11,7 @@ function Hero()
 
     return (
         <div className="hero">
-            { loading ? 'Loading...' : HeroContents( weather ) }
+            { loading ? <Loader /> : HeroContents( weather ) }
         </div>
     )
 }

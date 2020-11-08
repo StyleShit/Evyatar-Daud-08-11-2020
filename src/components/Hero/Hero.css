@@ -49,3 +49,8 @@
     padding: .5rem 1rem;
     font-size: 1.2em;
 }
+
+.hero .loader
+{
+    font-size: 4rem;
+}
