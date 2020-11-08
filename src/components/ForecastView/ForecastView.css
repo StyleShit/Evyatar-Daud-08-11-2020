@@ -1,0 +1,25 @@
+.forecast-container
+{
+    display: flex;
+    box-shadow: 0 0 20px 0 rgba( 0,0,0,.5 );
+}
+
+.forecast-container .forecast-day
+{
+    font-size: 1.5rem;
+    flex-basis: 20%;
+    background-color: rgba( 0,0,0,.6 );
+    color: #FFF;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+.forecast-container .forecast-day .day
+{
+    font-weight: bold;
+    color: #39f;
+}

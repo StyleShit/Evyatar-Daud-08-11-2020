@@ -1,6 +1,7 @@
 import React from 'react';
 import withStore from './HOCs/withStore';
 import { Header } from './components/Header';
+import { ForecastView } from './components/ForecastView';
 
 import './css/App.css';
 
@@ -8,11 +9,13 @@ import './css/App.css';
 function App()
 {
 	return (
-		<Header />
+		<div className="app-container">
+			<Header />
 
-		// TODO: autocomplete
+			{/* TODO: autocomplete */}
 
-		// TODO: forecast-view 
+			<ForecastView />
+		</div>
 	);
 }
 
