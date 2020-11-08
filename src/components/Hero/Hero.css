@@ -50,6 +50,11 @@
     font-size: 1.2em;
 }
 
+.hero .hero-subtitle .weather-text
+{
+    font-size: 1.5rem;
+}
+
 .hero .loader
 {
     font-size: 4rem;
