@@ -39,6 +39,7 @@
     left: 5%;
     margin-top: -2px;
     border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
     background-color: rgba( 0,0,0,.5 );
     color: #FFF;
     transition: .3s all;
@@ -59,7 +60,8 @@
     transition: .3s all;
 }
 
-.auto-complete-suggestions ul li:hover
+.auto-complete-suggestions ul li:hover,
+.auto-complete-suggestions ul li.active
 {
     background-color: rgba( 0,0,0,.8 );
 }
