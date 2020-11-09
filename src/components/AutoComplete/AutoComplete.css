@@ -31,6 +31,7 @@
     border: none;
     outline: none;
     border-radius: 100rem;
+    transition: .3s all;
 }
 
 .auto-complete-suggestions
@@ -66,4 +67,26 @@
 .auto-complete-suggestions ul li.active
 {
     background-color: rgba( 0,0,0,.8 );
+}
+
+
+/*
+    Light Theme
+*/
+.light-theme .auto-complete-input
+{
+    background-color: rgba( 255,255,255,.3 );
+    color: #333;
+}
+
+.light-theme .auto-complete-suggestions
+{
+    background-color: rgba( 255,255,255,.5 );
+    color: #333;
+}
+
+.light-theme .auto-complete-suggestions ul li:hover,
+.light-theme .auto-complete-suggestions ul li.active
+{
+    background-color: rgba( 255,255,255,.8 );
 }

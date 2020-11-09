@@ -4,6 +4,7 @@ import withStore from './HOCs/withStore';
 import withRouter from './HOCs/withRouter';
 import { compose } from 'redux';
 import { useDispatch } from 'react-redux';
+import { useTheme } from './hooks';
 import { Header } from './components/Header';
 import { Favorites, Home } from './pages';
 import { apiCurrentWeather, apiForecast } from './redux/middlewares/api';
@@ -14,6 +15,7 @@ import './css/App.css';
 function App()
 {
 	const dispatch = useDispatch();
+	const [ theme ] = useTheme();
 
 	useEffect( () => {
 
@@ -30,7 +32,7 @@ function App()
 	}, []);
 
 	return (
-		<div className="app-container">
+		<div className={ `app-container ${ theme }-theme` }>
 			<Header />
 
 			<Switch>

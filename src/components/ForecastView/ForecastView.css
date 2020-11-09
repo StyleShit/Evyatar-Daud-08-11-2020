@@ -3,6 +3,7 @@
     display: flex;
     background-color: rgba( 0,0,0,.6 );
     box-shadow: 0 0 20px 0 rgba( 0,0,0,.5 );
+    transition: .3s all;
 }
 
 .forecast-container .loader
@@ -22,6 +23,7 @@
     align-items: center;
     justify-content: center;
     row-gap: 2rem;
+    transition: .3s all;
 }
 
 .forecast-container .forecast-day:not( :last-child )
@@ -40,4 +42,28 @@
 .forecast-container .forecast-day .weather-icon
 {
     max-height: 2.5em;
+}
+
+
+/*
+    Light Theme
+*/
+.light-theme .forecast-container
+{
+    background-color: rgba( 136, 136, 136,.6 );
+}
+
+.light-theme .forecast-container .forecast-day
+{
+    color: #000;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba( 255,255,255,.5 );
+    border-right-color: rgba( 0,0,0,.2 );
+}
+
+.light-theme .forecast-container .forecast-day .weather-icon
+{
+    filter: drop-shadow( 0 0 10px rgba( 0,0,0,.5 ) )
+            drop-shadow( 0 0 15px rgba( 0,0,0,.5 ) )
+            drop-shadow( 0 0 20px rgba( 0,0,0,.8 ) );
 }
