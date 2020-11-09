@@ -1,6 +1,9 @@
 .forecast-container
 {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     background-color: rgba( 0,0,0,.6 );
     box-shadow: 0 0 20px 0 rgba( 0,0,0,.5 );
     transition: .3s all;
@@ -63,7 +66,5 @@
 
 .light-theme .forecast-container .forecast-day .weather-icon
 {
-    filter: drop-shadow( 0 0 10px rgba( 0,0,0,.5 ) )
-            drop-shadow( 0 0 15px rgba( 0,0,0,.5 ) )
-            drop-shadow( 0 0 20px rgba( 0,0,0,.8 ) );
+    filter: drop-shadow( 0 0 10px rgba( 0,0,0,.5 ) );
 }

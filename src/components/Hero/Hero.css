@@ -5,6 +5,7 @@
     justify-content: center;
     flex-direction: column;
     color: #FFF;
+    margin-bottom: 3rem;
     text-shadow: 0 0 10px rgba( 0,0,0,.5 );
     transition: .3s all;
 }
@@ -36,6 +37,7 @@
 .hero .weather-icon
 {
     max-height: 2em;
+    filter: drop-shadow( 0 0 10px rgba( 0,0,0,.5 ) );
 }
 
 .hero .hero-subtitle .temperature span
@@ -59,20 +61,4 @@
 .hero .loader
 {
     font-size: 4rem;
-}
-
-
-/*
-    Light Theme
-*/
-.light-theme .hero
-{
-    color: #000;
-    text-shadow: 0 0 5px rgba( 0,0,0,.3 );
-}
-
-.light-theme .hero .weather-text
-{
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba( 255,255,255,.3 );
 }

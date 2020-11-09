@@ -45,13 +45,13 @@
 .light-theme .favorite-box
 {
     color: #000;
-    background-color: rgba( 255,255,255,.1 );
+    text-shadow: none;
+    font-weight: bold;
+    background-color: rgba( 255,255,255,.4 );
     box-shadow: 0 0 20px 0 rgba( 0,0,0,.1 );
 }
 
 .light-theme .favorite-box .weather-icon
 {
-    filter: drop-shadow( 0 0 10px rgba( 0,0,0,.5 ) )
-            drop-shadow( 0 0 15px rgba( 0,0,0,.5 ) )
-            drop-shadow( 0 0 20px rgba( 0,0,0,.2 ) );
+    filter: drop-shadow( 0 0 10px rgba( 0,0,0,.5 ) );
 }

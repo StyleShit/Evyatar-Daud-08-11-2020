@@ -26,6 +26,52 @@ body
 
 
 /*
+    Responsiveness
+*/
+@media screen and ( max-width: 1024px )
+{
+    .forecast-container .forecast-day
+    {
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and ( max-width: 768px )
+{
+    .header
+    {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .header-title
+    {
+        text-align: center;
+    }
+}
+
+@media screen and ( max-width: 500px )
+{
+    .hero .hero-title
+    {
+        font-size: 2rem;
+    }
+
+    .forecast-container .forecast-day
+    {
+        flex: 0 0 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba( 255,255,255,.2 );
+    }
+
+    .light-theme .forecast-container .forecast-day
+    {
+        border-bottom: 1px solid rgba( 0,0,0,.2 );
+    }
+}
+
+
+/*
     Animations
 */
 @keyframes spin
