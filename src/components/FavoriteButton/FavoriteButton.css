@@ -4,6 +4,7 @@
     background-color: transparent;
     outline: none;
     margin-right: .5rem;
+    cursor: pointer;
     transition: .3s all;
 }
 
