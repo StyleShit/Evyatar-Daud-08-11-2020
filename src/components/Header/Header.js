@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigation } from '../Navigation';
+import { withErrorBoundary } from '../../HOCs';
 import './Header.css';
 
 function Header()
@@ -15,4 +16,4 @@ function Header()
     )
 }
 
-export default Header;
+export default withErrorBoundary( Header );

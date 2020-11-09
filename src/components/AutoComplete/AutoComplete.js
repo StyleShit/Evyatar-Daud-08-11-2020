@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAutoComplete, setCurrentWeather, setForecast } from '../../redux';
 import { apiAutoComplete, apiCurrentWeather, apiForecast } from '../../redux/middlewares/api';
+import { withErrorBoundary } from '../../HOCs';
 import './AutoComplete.css';
 
 
@@ -143,4 +144,4 @@ function AutoComplete()
     )
 }
 
-export default AutoComplete;
+export default withErrorBoundary( AutoComplete );

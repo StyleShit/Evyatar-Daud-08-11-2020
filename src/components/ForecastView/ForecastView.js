@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Loader } from '../Loader';
 import { useIcon, useUnit } from '../../hooks';
+import { withErrorBoundary } from '../../HOCs';
 import './ForecastView.css';
 
 function ForecastView()
@@ -48,4 +49,4 @@ function ForecastDay({ forecast })
 
 }
 
-export default ForecastView;
+export default withErrorBoundary( ForecastView );

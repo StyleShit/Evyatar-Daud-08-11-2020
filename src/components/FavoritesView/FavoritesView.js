@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { setCurrentWeather, setForecast } from '../../redux';
 import { apiCurrentWeather, apiForecast } from '../../redux/middlewares/api';
 import { FavoriteBox } from '../FavoriteBox';
+import { withErrorBoundary } from '../../HOCs';
 import './FavoritesView.css';
 
 function FavoritesView()
@@ -55,4 +56,4 @@ function FavoritesView()
     )
 }
 
-export default FavoritesView;
+export default withErrorBoundary( FavoritesView );
