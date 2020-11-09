@@ -1,0 +1,39 @@
+.favorite-box
+{
+    box-shadow: 0 0 10px 0 rgba( 0,0,0,.3 );
+    background-color: rgba( 0,0,0,.5 );
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.favorite-box:hover
+{
+    transform: scale( 1.05 );
+    box-shadow: 0 0 20px 0 rgba( 0,0,0,.5 );
+}
+
+.favorite-box .location-name
+{
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.favorite-box .temperature
+{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.favorite-box .weather-icon
+{
+    max-height: 3em;
+    margin-right: 1em;
+}

@@ -16,8 +16,7 @@ export const useFavorite = ( location ) => {
 
         const favorite = {
             LocationKey: location.LocationKey,
-            LocalizedName: location.LocalizedName,
-            currentWeather: {}
+            LocalizedName: location.LocalizedName
         };
 
         if( isFavorite() )

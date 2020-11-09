@@ -1,4 +1,4 @@
-import { setAutoComplete, setCurrentWeather, setForecast } from '../..';
+import { setAutoComplete, setCurrentWeather, setForecast, setFavoriteCurrentWeather } from '../..';
 import ACTIONS from './actionTypes'
 
 
@@ -58,12 +58,33 @@ export const apiAutoComplete = ( query ) => {
 
 
 // get current weather by location key
-export const apiCurrentWeather = ({ LocationKey: locationKey, LocalizedName: name }) => {
+export const apiCurrentWeather = ( { LocationKey: locationKey, LocalizedName: name }, locationType = 'main' ) => {
+
+    let onSuccess;
+
+    // decide to which reducer the fetched weather should be passed according to the location type
+    switch( locationType )
+    {
+        // main weather -> i.e. state.weather.current
+        case 'main':
+            onSuccess = ( data ) => setCurrentWeather( data, name, locationKey );
+            break;
+
+        // favorite location -> i.e. state.favorites[i]
+        case 'favorite':
+            onSuccess = ( data ) => setFavoriteCurrentWeather( data, locationKey );
+            break;
+
+        default:
+            break;
+
+    }
+
 
     return apiAction({
         endpoint: `Qgi7q1mW?${ locationKey }`,
-        // endpoint: 'currentconditions/v1/${ locationKey }',
-        onSuccess: ( data ) => setCurrentWeather( data, name, locationKey )
+        // endpoint: `currentconditions/v1/${ locationKey }`,
+        onSuccess: onSuccess
     });
 
 }
@@ -74,7 +95,7 @@ export const apiForecast = ({ LocationKey: locationKey }) => {
 
     return apiAction({
         endpoint: `khdh3e7B?${ locationKey }`,
-        // endpoint: 'forecasts/v1/daily/5day/${ locationKey }',
+        // endpoint: `forecasts/v1/daily/5day/${ locationKey }`,
         data: {
             metric: true
         },

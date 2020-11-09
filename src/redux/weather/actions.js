@@ -1,7 +1,7 @@
 import ACTIONS from './actionTypes';
 
 
-export const setCurrentWeather = ( [ current ], name = '', locationKey ) => {
+export const setCurrentWeather = ( [ current ], name = '', locationKey = '' ) => {
 
     current = current || {};
     current.Name = name;

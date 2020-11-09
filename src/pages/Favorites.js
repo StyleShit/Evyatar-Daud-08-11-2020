@@ -1,12 +1,11 @@
 import React from 'react';
+import { FavoritesView } from '../components/FavoritesView';
 
 function Favorites()
 {
     return (
         <>
-            <h1 style={{ marginBottom: 'auto' }}>
-                Favorites!
-            </h1>
+            <FavoritesView />
         </>
     )
 }

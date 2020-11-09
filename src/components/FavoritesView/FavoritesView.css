@@ -1,0 +1,39 @@
+.favorites-view
+{
+    margin: 10vh auto auto;
+    text-shadow: 0 0 10px rgba( 0,0,0,.5 );
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    box-shadow: 0 0 10px 0 rgba( 0,0,0,.3 );
+    background-color: rgba( 0,0,0,.1 );
+}
+
+.favorites-view h1
+{
+    margin: 0 auto 3rem;
+}
+
+.favorites-view .no-favorites
+{
+    font-size: 1.2rem;
+}
+
+.favorites-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 90vw;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.favorites-container > *
+{
+    flex: 0 0 auto;
+}

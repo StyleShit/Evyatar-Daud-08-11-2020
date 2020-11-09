@@ -19,12 +19,14 @@ export const removeFavorite = ( location ) => {
 
 }
 
-export const setFavoriteCurrentWeather = ( location, weather ) => {
+export const setFavoriteCurrentWeather = ( [ weather ], locationKey ) => {
+
+    weather = weather || {};
 
     return {
         type: ACTIONS.SET_WEATHER,
         payload: {
-            location,
+            locationKey,
             weather 
         }
     };
