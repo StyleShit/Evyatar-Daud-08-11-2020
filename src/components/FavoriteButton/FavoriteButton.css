@@ -1,0 +1,27 @@
+.favorite-toggle-button
+{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-right: .5rem;
+    transition: .3s all;
+}
+
+.favorite-toggle-button:hover
+{
+    animation: .5s bounce ease-out forwards;
+}
+
+.favorite-toggle-button svg
+{
+    filter: drop-shadow( 0 0 5px rgba( 0,0,0,.4 ) );
+    height: 2rem;
+    width: 2rem;
+    fill: #CCC;
+    transition: .3s all;
+}
+
+.favorite-toggle-button.is-favorite svg
+{
+    fill: #F44336;
+}

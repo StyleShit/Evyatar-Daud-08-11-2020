@@ -63,7 +63,7 @@ export const apiCurrentWeather = ({ LocationKey: locationKey, LocalizedName: nam
     return apiAction({
         endpoint: `Qgi7q1mW?${ locationKey }`,
         // endpoint: 'currentconditions/v1/${ locationKey }',
-        onSuccess: ( data ) => setCurrentWeather( data, name )
+        onSuccess: ( data ) => setCurrentWeather( data, name, locationKey )
     });
 
 }
