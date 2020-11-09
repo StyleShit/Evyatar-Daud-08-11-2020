@@ -31,7 +31,6 @@ const apiMiddleware = ({ dispatch }) => next => action => {
 
 
     data.apikey = apiKey;
-    headers['Content-Type'] = 'application/json';
 
     let url = baseURL + endpoint;
     let options = { method, mode: 'cors', redirect: 'follow', headers };
