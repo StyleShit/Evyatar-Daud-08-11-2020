@@ -10,6 +10,8 @@
     text-decoration: none;
     color: #FFF;
     padding: .5rem 1rem;
+    outline: none;
+    position: relative;
     transition: .3s all;
 }
 
@@ -21,6 +23,24 @@
 .navigation-container a:hover
 {
     color: #E0AA1F;
+}
+
+.navigation-container a::after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #E0AA1F;
+    bottom: 0;
+    left: 25%;
+    transition: .3s all;
+}
+
+.navigation-container a.active::after
+{
+    width: 50%;
 }
 
 .navigation-container .toggle-button

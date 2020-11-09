@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTheme, useUnit } from '../../hooks';
 import { Moon, Sun } from '../../icons';
 import './Navigation.css';
@@ -18,8 +18,8 @@ function Navigation()
 
             <button className="toggle-button  toggle-unit-button" onClick={ toggleUnit }>{ unit }</button>
 
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/favorites" className="nav-link">Favorites</Link>
+            <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
+            <NavLink exact to="/favorites" className="nav-link" activeClassName="active">Favorites</NavLink>
         </div>
     )
 }
