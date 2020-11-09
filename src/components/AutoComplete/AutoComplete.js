@@ -119,7 +119,7 @@ function AutoComplete()
                 type="text"
                 placeholder="Type to search..."
                 className="auto-complete-input"
-                onChange={ e => setValue( e.target.value) }
+                onChange={ e => setValue( e.target.value ) }
                 onKeyUp={ keyUp }
             />
 
