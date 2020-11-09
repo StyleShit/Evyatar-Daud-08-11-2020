@@ -29,6 +29,7 @@
     box-shadow: 0 0 10px 0 rgba( 0,0,0,.3 );
     color: #FFF;
     border: none;
+    outline: none;
     border-radius: 100rem;
 }
 
@@ -42,6 +43,7 @@
     overflow: hidden;
     background-color: rgba( 0,0,0,.5 );
     color: #FFF;
+    z-index: 999;
     transition: .3s all;
 }
 
