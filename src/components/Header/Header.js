@@ -7,7 +7,7 @@ function Header()
     return (
         <div className="header">
             <h1 className="header-title">
-                Herolo Weather Task
+                Herolo Weather
             </h1>
 
             <Navigation />
