@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
-import withStore from './HOCs/withStore';
-import withRouter from './HOCs/withRouter';
+import { withStore, withRouter, withToasts } from './HOCs';
 import { compose } from 'redux';
 import { useDispatch } from 'react-redux';
 import { useTheme } from './hooks';
@@ -52,5 +51,6 @@ function App()
 
 export default compose(
 	withStore,
-	withRouter
+	withRouter,
+	withToasts
 )( App );

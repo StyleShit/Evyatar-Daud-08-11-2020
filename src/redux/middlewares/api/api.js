@@ -1,5 +1,6 @@
 import { apiError, apiStart, apiSuccess } from './actions';
 import ACTIONS from './actionTypes';
+import { toast } from 'react-toastify';
 
 const baseURL = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -70,6 +71,7 @@ const apiMiddleware = ({ dispatch }) => next => action => {
 
             dispatch( apiError( label, error ) );
             dispatch( onError( error ) );
+            toast.error( 'An error has occurred while fetching fata. Try again later.', { toastId: 'toast-error-api' } );
 
         });
 

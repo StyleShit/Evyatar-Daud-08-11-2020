@@ -24,6 +24,11 @@ body
     background-attachment: fixed;
 }
 
+.Toastify__toast-body
+{
+    font-family: Montserrat, sans-serif;
+}
+
 
 /*
     Responsiveness

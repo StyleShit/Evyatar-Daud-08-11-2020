@@ -1,4 +1,5 @@
 import ACTIONS from './actionTypes';
+import { toast } from 'react-toastify';
 
 
 const defaultState = []
@@ -31,16 +32,20 @@ export default reducer;
 
 const add = ( state, location ) => {
 
-    let updated = remove( state, location );
+    let updated = remove( state, location, false );
     updated.push( location );
+
+    toast.success( `${ location.LocalizedName } added to favorites!` );
 
     return updated;
 
 }
 
-const remove = ( state, location ) => {
+const remove = ( state, location, showToast = true ) => {
 
     let updated = state.filter( f => ( f.LocationKey !== location.LocationKey ));
+
+    showToast && toast.info( `${ location.LocalizedName } removed from favorites!` );
 
     return updated;
 
