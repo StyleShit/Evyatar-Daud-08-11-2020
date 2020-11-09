@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Loader } from '../Loader';
-import { useIcon } from '../../hooks';
+import { useIcon, useUnit } from '../../hooks';
 import './ForecastView.css';
 
 function ForecastView()
@@ -16,7 +16,7 @@ function ForecastView()
             
             { 
                 weather.forecast.map( ( f, i ) => {
-                    return ForecastDay( f, i );
+                    return <ForecastDay forecast={ f } key={ i } />;
                 })
             }
 
@@ -25,17 +25,19 @@ function ForecastView()
 }
 
 
-const ForecastDay = ( forecast, i ) => {
+function ForecastDay({ forecast })
+{
 
+    const [ calcTemp ] = useUnit();
     const date = new Date( forecast.Date );
     const day = date.toString().split( ' ' )[0];
     const icon = useIcon( forecast.Day.Icon );
     const iconAlt = forecast.Day.IconPhrase;
-    const temperatureMin = parseInt( forecast.Temperature.Minimum.Value );
-    const temperatureMax = parseInt( forecast.Temperature.Maximum.Value );
+    const temperatureMin = calcTemp( forecast.Temperature.Minimum.Value );
+    const temperatureMax = calcTemp( forecast.Temperature.Maximum.Value );
     
     return (
-        <div className="forecast-day" key={ i }>
+        <div className="forecast-day">
             <span className="day">{ day }</span>
             <img className="weather-icon" alt={ iconAlt } src={ icon } />
             <span className="temperature">

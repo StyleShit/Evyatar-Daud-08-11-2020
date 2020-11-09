@@ -15,3 +15,30 @@
 {
     color: #E0AA1F;
 }
+
+.navigation-container .toggle-unit-button
+{
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba( 255,255,255,.5 );
+    color: #333;
+    font-size: 1em;
+    padding: .5rem .7rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: .3s all;
+}
+
+.navigation-container .toggle-unit-button::after
+{
+    content: '°';
+}
+
+.navigation-container .toggle-unit-button:hover,
+.navigation-container .toggle-unit-button:focus
+{
+    background-color: rgba( 255,255,255,.7 );
+}

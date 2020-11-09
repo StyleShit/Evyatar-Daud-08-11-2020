@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useFavorite, useIcon } from '../../hooks';
+import { useFavorite, useIcon, useUnit } from '../../hooks';
 import { FavoriteButton } from '../FavoriteButton';
 
 function HeroContents()
 {
     const weather = useSelector( state => state.weather );
+    const [ calcTemp ] = useUnit();
     const [ isFavorite, toggleFavorite ] = useFavorite( weather.current );
     
     const {
@@ -16,7 +17,7 @@ function HeroContents()
 
     } = weather.current;
 
-    const temperature = parseInt( weather.current.Temperature.Metric.Value );
+    const temperature = calcTemp( weather.current.Temperature.Metric.Value );
 
     return ( 
         <>
