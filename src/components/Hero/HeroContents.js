@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useFavorite } from '../../hooks';
-import { getImageURL } from '../../utils';
+import { useFavorite, useIcon } from '../../hooks';
 import { FavoriteButton } from '../FavoriteButton';
 
 function HeroContents()
@@ -28,7 +27,7 @@ function HeroContents()
 
             <p className="hero-subtitle">
                 <span className="temperature">
-                    <img className="weather-icon" alt={ text } src={ getImageURL( icon ) } />
+                    <img className="weather-icon" alt={ text } src={ useIcon( icon ) } />
                     <span>{ temperature }°</span>
                 </span>
                 <span className="weather-text">{ text }</span>
