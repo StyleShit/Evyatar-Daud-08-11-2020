@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useIcon } from '../../hooks';
+import { useIcon, useUnit } from '../../hooks';
 import { apiCurrentWeather } from '../../redux/middlewares/api';
 import { Loader } from '../Loader';
 import './FavoriteBox.css';
@@ -44,7 +44,8 @@ function WeatherData({ location })
 
     } = location.currentWeather;
 
-    const temperature = parseInt( location.currentWeather.Temperature.Metric.Value );
+    const [ calcTemp ] = useUnit();
+    const temperature = calcTemp( location.currentWeather.Temperature.Metric.Value );
 
     return (
         <>
