@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { withStore, withRouter, withToasts } from './HOCs';
 import { compose } from 'redux';
 import { useDispatch } from 'react-redux';
-import { useTheme } from './hooks';
+import { useDefaultLocation, useTheme } from './hooks';
 import { Header } from './components/Header';
 import { Favorites, Home, NotFound } from './pages';
 import { apiCurrentWeather, apiForecast } from './redux/middlewares/api';
@@ -15,20 +15,16 @@ function App()
 {
 	const dispatch = useDispatch();
 	const [ theme ] = useTheme();
-
+	const [ location ] = useDefaultLocation();
+	
 	useEffect( () => {
 
 		// fetch default location data on load
-		const defaultLocation = { 
-			LocationKey: '215854',
-			LocalizedName: 'Tel Aviv'
-		};
-
-		dispatch( apiCurrentWeather( defaultLocation ) );
-		dispatch( apiForecast( defaultLocation ) );
+		dispatch( apiCurrentWeather( location ) );
+		dispatch( apiForecast( location ) );
 
 	// eslint-disable-next-line
-	}, []);
+	}, [ location ]);
 
 	return (
 		<div className={ `app-container ${ theme }-theme` }>

@@ -103,3 +103,19 @@ export const apiForecast = ({ LocationKey: locationKey }) => {
     });
 
 }
+
+
+// get geo location by lat,lon
+export const apiGeoLocation = ( { latitude: lat, longitude: lon }, callback ) => {
+
+    return apiAction({
+        endpoint: 'EB3m206a',
+        // endpoint: '/locations/v1/cities/geoposition/search',
+        data: {
+            details: true,
+            q: `${ lat },${lon}`
+        },
+        callback: ({ Key: LocationKey, LocalizedName }) => { callback({ LocationKey, LocalizedName }); }
+    });
+
+}
