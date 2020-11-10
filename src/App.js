@@ -5,7 +5,7 @@ import { compose } from 'redux';
 import { useDispatch } from 'react-redux';
 import { useTheme } from './hooks';
 import { Header } from './components/Header';
-import { Favorites, Home } from './pages';
+import { Favorites, Home, NotFound } from './pages';
 import { apiCurrentWeather, apiForecast } from './redux/middlewares/api';
 
 import './css/App.css';
@@ -42,6 +42,10 @@ function App()
 
 				<Route exact path="/favorites">
 					<Favorites />
+				</Route>
+
+				<Route>
+					<NotFound />
 				</Route>
 
 			</Switch>
