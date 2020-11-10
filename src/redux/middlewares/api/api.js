@@ -26,7 +26,8 @@ const apiMiddleware = ({ dispatch }) => next => action => {
         data = {},
         headers = {},
         onSuccess = () => ({ type: '' }),
-        onError = () => ({ type: '' })
+        onError = () => ({ type: '' }),
+        callback = () => {}
         
     } = action.payload;
 
@@ -64,6 +65,9 @@ const apiMiddleware = ({ dispatch }) => next => action => {
             // successful request
             dispatch( apiSuccess( label, data ) );
             dispatch( onSuccess( data ) );
+
+            if( typeof callback === 'function' )
+                callback( data );
         })
 
         // request error
