@@ -34,6 +34,11 @@
     transition: .3s all;
 }
 
+.auto-complete-input::placeholder
+{
+    color: #CCC;
+}
+
 .auto-complete-suggestions
 {
     position: absolute;
@@ -94,4 +99,9 @@
 .light-theme .auto-complete-loader
 {
     border-color: #333;
+}
+
+.light-theme .auto-complete-input::placeholder
+{
+    color: #777;
 }
