@@ -2,6 +2,6 @@
 
 React app for Herolo assignment.
 
-CreatedAt: 08/11/2020
+Created at: 08/11/2020
 
-Created using boilerplate from [React Redux Boilerplate](https://github.com/StyleShit/react-redux-boilerplate) by me :)
+Created using my [React Redux Boilerplate](https://github.com/StyleShit/react-redux-boilerplate).
