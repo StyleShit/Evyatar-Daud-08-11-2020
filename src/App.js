@@ -20,8 +20,11 @@ function App()
 	useEffect( () => {
 
 		// fetch default location data on load
-		dispatch( apiCurrentWeather( location ) );
-		dispatch( apiForecast( location ) );
+		if( Object.keys( location ).length !== 0 )
+		{
+			dispatch( apiCurrentWeather( location ) );
+			dispatch( apiForecast( location ) );
+		}
 
 	// eslint-disable-next-line
 	}, [ location ]);
