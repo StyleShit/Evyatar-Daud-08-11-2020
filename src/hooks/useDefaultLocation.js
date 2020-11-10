@@ -15,6 +15,7 @@ export const useDefaultLocation = () => {
     
     const [ location, setLocation ] = useState( defaultLocation );
     const [ isLocated, setIsLocated ] = useState( false );
+    const [ triedToLocate, setTriedToLocate ] = useState( false );
 
     const toastIds = {
 
@@ -57,10 +58,11 @@ export const useDefaultLocation = () => {
         }
           
         navigator.geolocation.getCurrentPosition( success, error, options );
+        setTriedToLocate( true );
     
     }
     
-    if( !isLocated )
+    if( !triedToLocate )
         getGeoLocation();
 
     return [ location, isLocated ];

@@ -7,6 +7,7 @@ import { useDefaultLocation, useTheme } from './hooks';
 import { Header } from './components/Header';
 import { Favorites, Home, NotFound } from './pages';
 import { apiCurrentWeather, apiForecast } from './redux/middlewares/api';
+import { setCurrentWeather, setForecast } from './redux';
 
 import './css/App.css';
 
@@ -15,19 +16,22 @@ function App()
 {
 	const dispatch = useDispatch();
 	const [ theme ] = useTheme();
-	const [ location ] = useDefaultLocation();
+	const [ defaultLocation ] = useDefaultLocation();
 	
 	useEffect( () => {
 
 		// fetch default location data on load
-		if( Object.keys( location ).length !== 0 )
+		if( Object.keys( defaultLocation ).length !== 0 )
 		{
-			dispatch( apiCurrentWeather( location ) );
-			dispatch( apiForecast( location ) );
+			dispatch( setCurrentWeather( [] ) );
+			dispatch( setForecast( [] ) );
+
+			dispatch( apiCurrentWeather( defaultLocation ) );
+			dispatch( apiForecast( defaultLocation ) );
 		}
 
 	// eslint-disable-next-line
-	}, [ location ]);
+	}, [ defaultLocation ]);
 
 	return (
 		<div className={ `app-container ${ theme }-theme` }>
