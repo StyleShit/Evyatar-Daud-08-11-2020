@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { setCurrentWeather, setForecast } from '../../redux';
+import { setCurrentWeatherLoading, setForecastLoading } from '../../redux';
 import { apiCurrentWeather, apiForecast } from '../../redux/middlewares/api';
 import { FavoriteBox } from '../FavoriteBox';
 import { withErrorBoundary } from '../../HOCs';
@@ -17,13 +17,12 @@ function FavoritesView()
     // redirect the user to full forecast view of the selected location
     const fullForecast = ( location ) => {
 
-         // reset & fetch current weather
-         dispatch( setCurrentWeather( [] ) );
-         dispatch( apiCurrentWeather( location ) );
- 
-         // reset & fetch forecast
-         dispatch( setForecast( [] ) );
-         dispatch( apiForecast( location ) );
+        // fetch weather & forecast
+        dispatch( setCurrentWeatherLoading( true ) );
+        dispatch( setForecastLoading( true ) );
+        
+        dispatch( apiCurrentWeather( location ) );
+        dispatch( apiForecast( location ) );
 
          history.push( '/' );
 

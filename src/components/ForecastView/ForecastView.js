@@ -8,14 +8,14 @@ import './ForecastView.css';
 function ForecastView()
 {
     const weather = useSelector( state => state.weather );
-    const loading = weather.forecast.length === 0;
+    const loading = weather.loading.forecast;
 
     return (
         <div className="forecast-container">
 
             { loading && <Loader /> }
             
-            { 
+            { !loading &&
                 weather.forecast.map( ( f, i ) => {
                     return <ForecastDay forecast={ f } key={ i } />;
                 })

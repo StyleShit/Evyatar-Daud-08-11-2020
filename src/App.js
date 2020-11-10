@@ -7,7 +7,7 @@ import { useDefaultLocation, useTheme } from './hooks';
 import { Header } from './components/Header';
 import { Favorites, Home, NotFound } from './pages';
 import { apiCurrentWeather, apiForecast } from './redux/middlewares/api';
-import { setCurrentWeather, setForecast } from './redux';
+import { setCurrentWeatherLoading, setForecastLoading } from './redux';
 
 import './css/App.css';
 
@@ -23,8 +23,8 @@ function App()
 		// fetch default location data on load
 		if( Object.keys( defaultLocation ).length !== 0 )
 		{
-			dispatch( setCurrentWeather( [] ) );
-			dispatch( setForecast( [] ) );
+			dispatch( setCurrentWeatherLoading( true) );
+			dispatch( setForecastLoading( true ) );
 
 			dispatch( apiCurrentWeather( defaultLocation ) );
 			dispatch( apiForecast( defaultLocation ) );

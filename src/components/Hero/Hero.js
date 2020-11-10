@@ -8,7 +8,7 @@ import './Hero.css';
 function Hero()
 {
     const weather = useSelector( state => state.weather );
-    const loading = !weather.current.Name;
+    const loading = weather.loading.current;
 
     return (
         <div className="hero">

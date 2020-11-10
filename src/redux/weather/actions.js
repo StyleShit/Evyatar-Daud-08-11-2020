@@ -25,3 +25,21 @@ export const setForecast = ({ DailyForecasts: forecast }) => {
     };
 
 }
+
+export const setCurrentWeatherLoading = ( isLoading ) => {
+
+    return {
+        type: ACTIONS.SET_CURRENT_LOADING,
+        payload: { isLoading }
+    };
+
+}
+
+export const setForecastLoading = ( isLoading ) => {
+
+    return {
+        type: ACTIONS.SET_FORECAST_LOADING,
+        payload: { isLoading }
+    };
+
+}

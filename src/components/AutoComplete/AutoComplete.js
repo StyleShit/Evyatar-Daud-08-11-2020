@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAutoComplete, setCurrentWeather, setForecast } from '../../redux';
+import { setAutoComplete, setCurrentWeatherLoading, setForecastLoading } from '../../redux';
 import { apiAutoComplete, apiCurrentWeather, apiForecast } from '../../redux/middlewares/api';
 import { withErrorBoundary } from '../../HOCs';
 import './AutoComplete.css';
@@ -52,18 +52,16 @@ function AutoComplete()
 
         const idx = i ?? currentItem;
         const selected = suggestions[idx];
-
-        console.log( selected );
         
         setCurrentItem( -1 );
         dispatch( setAutoComplete( [] ) );
         
-        // reset & fetch current weather
-        dispatch( setCurrentWeather( [] ) );
-        dispatch( apiCurrentWeather( selected ) );
 
-        // reset & fetch forecast
-        dispatch( setForecast( [] ) );
+        // fetch weather & forecast
+        dispatch( setCurrentWeatherLoading( true ) );
+        dispatch( setForecastLoading( true ) );
+        
+        dispatch( apiCurrentWeather( selected ) );
         dispatch( apiForecast( selected ) );
 
     };
