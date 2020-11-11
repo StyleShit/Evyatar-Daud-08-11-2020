@@ -3,6 +3,10 @@
 React AccuWeather app for Herolo assignment.
 
 
+![Home Preview](preview/home.png "Home Preview")
+
+![Favorites Preview](preview/favorites.png "Favorites Preview")
+
 ## Installation:
 
 - Clone this git, then `npm install`.
