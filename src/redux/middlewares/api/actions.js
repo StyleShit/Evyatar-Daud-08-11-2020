@@ -45,8 +45,7 @@ export const apiAction = ( payload ) => {
 export const apiAutoComplete = ( query ) => {
 
     return apiAction({
-        endpoint: 'sKFzwtd6',
-        // endpoint: 'locations/v1/cities/autocomplete',
+        endpoint: 'locations/v1/cities/autocomplete',
         data: { q: query },
         onSuccess: setAutoComplete
     });
@@ -79,8 +78,7 @@ export const apiCurrentWeather = ( { LocationKey: locationKey, LocalizedName: na
 
 
     return apiAction({
-        endpoint: `Qgi7q1mW?${ locationKey }`,
-        // endpoint: `currentconditions/v1/${ locationKey }`,
+        endpoint: `currentconditions/v1/${ locationKey }`,
         onSuccess: onSuccess
     });
 
@@ -91,8 +89,7 @@ export const apiCurrentWeather = ( { LocationKey: locationKey, LocalizedName: na
 export const apiForecast = ({ LocationKey: locationKey }) => {
 
     return apiAction({
-        endpoint: `khdh3e7B?${ locationKey }`,
-        // endpoint: `forecasts/v1/daily/5day/${ locationKey }`,
+        endpoint: `forecasts/v1/daily/5day/${ locationKey }`,
         data: {
             metric: true
         },
@@ -106,8 +103,7 @@ export const apiForecast = ({ LocationKey: locationKey }) => {
 export const apiGeoLocation = ( { latitude: lat, longitude: lon }, callback ) => {
 
     return apiAction({
-        endpoint: 'EB3m206a',
-        // endpoint: '/locations/v1/cities/geoposition/search',
+        endpoint: '/locations/v1/cities/geoposition/search',
         data: {
             details: true,
             q: `${ lat },${lon}`
