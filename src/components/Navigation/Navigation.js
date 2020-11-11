@@ -16,7 +16,7 @@ function Navigation()
                 { theme === 'dark' ? <Moon /> : <Sun /> }
             </button>
 
-            <button className="toggle-button  toggle-unit-button" onClick={ toggleUnit }>{ unit }</button>
+            <button className="toggle-button toggle-unit-button" onClick={ toggleUnit }>{ unit }</button>
 
             <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
             <NavLink exact to="/favorites" className="nav-link" activeClassName="active">Favorites</NavLink>
