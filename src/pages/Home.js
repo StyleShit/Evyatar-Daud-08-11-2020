@@ -7,7 +7,7 @@ function Home()
 {
     return (
         <>
-            <AutoComplete />
+			<AutoComplete />
 			<Hero />
 			<ForecastView />
         </>
