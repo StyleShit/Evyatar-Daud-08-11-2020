@@ -18,20 +18,22 @@ function App()
 	const [ theme ] = useTheme();
 	const [ defaultLocation ] = useDefaultLocation();
 	
+
+	// fetch default location data on load
 	useEffect( () => {
 
-		// fetch default location data on load
-		if( Object.keys( defaultLocation ).length !== 0 )
-		{
-			dispatch( setCurrentWeatherLoading( true) );
-			dispatch( setForecastLoading( true ) );
+		if( Object.keys( defaultLocation ).length === 0 )
+			return;
 
-			dispatch( apiCurrentWeather( defaultLocation ) );
-			dispatch( apiForecast( defaultLocation ) );
-		}
+		dispatch( setCurrentWeatherLoading( true) );
+		dispatch( setForecastLoading( true ) );
+
+		dispatch( apiCurrentWeather( defaultLocation ) );
+		dispatch( apiForecast( defaultLocation ) );
 
 	// eslint-disable-next-line
 	}, [ defaultLocation ]);
+	
 
 	return (
 		<div className={ `app-container ${ theme }-theme` }>
