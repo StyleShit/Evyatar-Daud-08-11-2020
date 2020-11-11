@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useFavorite, useIcon, useUnit } from '../../hooks';
+import { useIcon, useUnit } from '../../hooks';
 import { FavoriteButton } from '../FavoriteButton';
 
 function HeroContents()
 {
     const weather = useSelector( state => state.weather );
     const [ calcTemp ] = useUnit();
-    const [ isFavorite, toggleFavorite ] = useFavorite( weather.current );
     
     const {
 
@@ -22,7 +21,7 @@ function HeroContents()
     return ( 
         <>
             <h1 className="hero-title">
-                <FavoriteButton isFavorite={ isFavorite } toggleFavorite={ toggleFavorite } />
+                <FavoriteButton location={ weather.current } />
                 { name }
             </h1>
 

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useFavorite } from '../../hooks';
 import { Heart } from '../../icons';
 import './FavoriteButton.css';
 
-function FavoriteButton({ isFavorite, toggleFavorite })
+function FavoriteButton({ location })
 {
+    const [ isFavorite, toggleFavorite ] = useFavorite( location );
     const cssClass = `favorite-toggle-button ${ isFavorite ? 'is-favorite' : '' }`;
 
     return (
