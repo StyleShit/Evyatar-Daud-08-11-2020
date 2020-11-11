@@ -18,7 +18,7 @@ export const useUnit = () => {
         if( unit === 'f' )
             deg = ( deg / 5 * 9 ) + 32;
 
-        // round te result
+        // round the result
         if( round )
             deg = Math.round( deg );
 
