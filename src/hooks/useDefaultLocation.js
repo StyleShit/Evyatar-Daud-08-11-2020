@@ -42,10 +42,14 @@ export const useDefaultLocation = () => {
             setIsLocated( true );
             setLocation( {} );
 
-            toast.dismiss( toastIds.info )
-            toast.success( 'Located successfully!', { toastId: toastIds.success } );
+            
+            dispatch( apiGeoLocation( pos.coords, ( data ) => {
+                
+                toast.dismiss( toastIds.info )
+                toast.success( 'Located successfully!', { toastId: toastIds.success } );
+                setLocation( data );
 
-            dispatch( apiGeoLocation( pos.coords, setLocation ) );
+            }));
         }
           
         const error = () => {
