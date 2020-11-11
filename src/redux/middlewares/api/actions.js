@@ -2,7 +2,6 @@ import { setAutoComplete, setCurrentWeather, setForecast, setFavoriteCurrentWeat
 import ACTIONS from './actionTypes'
 
 
-// api starts request
 export const apiStart = label => {
 
     return { 
@@ -12,7 +11,6 @@ export const apiStart = label => {
 
 };
 
-// api request was successful
 export const apiSuccess = ( label, data ) => {
 
     return { 
@@ -22,7 +20,6 @@ export const apiSuccess = ( label, data ) => {
 
 };
 
-// api request failed
 export const apiError = ( label, error ) => {
 
     return { 
