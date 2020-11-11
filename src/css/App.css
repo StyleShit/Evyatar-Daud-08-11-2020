@@ -97,26 +97,76 @@ body
     .header-title
     {
         text-align: center;
+        font-size: 1.7rem;
+    }
+
+    .hero .hero-title,
+    .hero .hero-subtitle .temperature
+    {
+        font-size: 2rem;
+    }
+
+    .auto-complete-input
+    {
+        font-size: 1rem;
+    }
+
+    .favorites-view h1
+    {
+        font-size: 1.7rem;
+    }
+
+    .favorite-box
+    {
+        padding: 1.5rem;
+    }
+
+    .favorites-view
+    {
+        padding: 2rem;
+    }
+
+    .forecast-container .forecast-day
+    {
+        flex: 1 0 33%;
+        padding: 1.5rem;
+        font-size: 1rem;
+        border-right: none;
+        border-bottom: 1px solid rgba( 255,255,255,.2 );
     }
 }
 
 @media screen and ( max-width: 500px )
 {
+    .navigation-container
+    {
+        font-size: .9rem;
+    }
+
+    .forecast-container .forecast-day
+    {
+        flex: 1 0 50%;
+    }
+
     .hero .hero-title
     {
         font-size: 2rem;
     }
 
-    .forecast-container .forecast-day
-    {
-        flex: 0 0 100%;
-        border-right: none;
-        border-bottom: 1px solid rgba( 255,255,255,.2 );
-    }
-
     .light-theme .forecast-container .forecast-day
     {
         border-bottom: 1px solid rgba( 0,0,0,.2 );
+    }
+    
+    .favorites-view h1
+    {
+        font-size: 1.5rem;
+    }
+
+    .favorite-box .location-name,
+    .favorite-box .temperature
+    {
+        font-size: 1rem;
     }
 }
 
